@@ -2,13 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
+
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css}" />
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js}"></script>
 </head>
 
 <body>
-    <div>
-        <h1 th:text="'Best of the year by ' + ${name} + '!'" />
-    </div>
+    <header class="container">
+        <div class="row d-flex">
+            <div class="col-2 fs-4 border border-dark p-3">
+                <p class="m-0 pt-1">Best of...</p>
+            </div>
+    
+            <div class="col-10 fs-4 border border-dark p-3">
+                <a th:href="@{/songs}" class="btn btn-light border border-dark m-1 px-3">Songs</a>
+                <a th:href="@{/movies}" class="btn btn-light border border-dark m-1 px-3">Movies</a>
+            </div>
+        </div>
+
+
+    </header>
+
+    <main class="container border border-dark">
+        <div class="text-center mt-5">
+            <h1 th:text="'Best of by ' + ${name} + '!'"/>
+        </div>
+        <div class="text-center">
+            <img src="https://placehold.co/600x200" alt="Placeholder IMG" class="border border-dark">
+        </div>
+        <div class="fs-4 d-flex justify-content-center mb-5 pb-5">
+            <p class="border border-dark p-3" style="max-width: 600px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Commodi qui consequuntur ab neque fugit repellat, obcaecati earum,
+                 inventore delectus, animi voluptate iure assumenda quod minus! 
+                Quam, exercitationem. Recusandae, quisquam ratione?</p>
+        </div>
+    </main>
+
+
+
 </body>
 
 </html>
