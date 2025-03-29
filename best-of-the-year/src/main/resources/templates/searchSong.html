@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Titolo ricercato</h1>
+    <div th:if="${song != null}">
+        <p th:text="${song.titolo}"></p>
+    </div>
+    <div th:if="${song == null}">
+        <p>Canzone non trovata</p>
+    </div>
+</body>
+
+</html>

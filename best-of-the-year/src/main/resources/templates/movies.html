@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Movies</title>
+</head>
+
+<body>
+    <h1>Lista Film</h1>
+    
+    <div>
+        <ul>
+            <li th:each="movie : ${listaMovies}" th:text="${movie.titolo}"></li>
+        </ul>
+    </div>
+
+<!--
+    Risoluzione Prima parte  
+    <div>
+        <p th:text="${listaFilm}"/>
+    </div> -->
+</body>
+
+</html>

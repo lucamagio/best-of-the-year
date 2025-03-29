@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Songs</title>
+</head>
+
+<body>
+    <h1>Lista Canzoni</h1>
+    
+    <div>
+        <ul>
+            <li th:each="song : ${listaSongs}" th:text="${song.titolo}"></li>
+        </ul>
+    </div>
+
+<!--     
+    Risoluzione Prima parte
+    <div>
+        <p th:text="${listaSong}"></p>
+    </div> -->
+</body>
+
+</html>
