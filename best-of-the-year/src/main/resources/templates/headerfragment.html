@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <header th:fragment="header" class="container">
+        <div class="row d-flex">
+            <div class="col-2 fs-4 border border-dark p-3">
+                <p class="m-0 pt-1">Best of...</p>
+            </div>
+    
+            <div class="col-10 fs-4 border border-dark p-3">
+                <a th:href="@{/songs}" class="btn btn-light border border-dark m-1 px-3">Songs</a>
+                <a th:href="@{/movies}" class="btn btn-light border border-dark m-1 px-3">Movies</a>
+                <a th:href="@{/(name='Luca')}" class="btn btn-light border border-dark m-1 px-3">Home</a>
+            </div>
+        </div>
+    </header>
+</html>

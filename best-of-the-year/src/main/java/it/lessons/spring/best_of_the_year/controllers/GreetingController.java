@@ -58,7 +58,7 @@ Risoluzione Prima parte
         return "songs"; 
     }
 
-    @GetMapping("/song/{id}")
+    @GetMapping("/songs/{id}")
     public String songId(@PathVariable(name = "id") int id, Model model) {
         List<Song> songs = getBestSong();
         for(Song s : songs){
@@ -88,17 +88,17 @@ Risoluzione Prima parte
 
     private List<Movie> getBestMovie(){
         List<Movie> movies = new ArrayList<>();
-        movies.add(new Movie(1, "Il gladiatore"));
-        movies.add(new Movie(2, "Matrix"));
-        movies.add(new Movie(3, "Il signore degli anelli"));
+        movies.add(new Movie(1, "Il gladiatore", "Ridley Scott"));
+        movies.add(new Movie(2, "Matrix", "Andy e Larry Wachowski"));
+        movies.add(new Movie(3, "Il signore degli anelli", "Sir Peter Robert Jackson"));
         return movies;
     }
 
     private List<Song> getBestSong(){
         List<Song> songs = new ArrayList<>();
-        songs.add(new Song(1, "Io ci sarò"));
-        songs.add(new Song(2, "Perfect"));
-        songs.add(new Song(3, "We are the champions"));
+        songs.add(new Song(1, "Io ci sarò", "883 - Max Pezzali"));
+        songs.add(new Song(2, "Perfect", "Ed Sheeran"));
+        songs.add(new Song(3, "We are the champions", "Queen"));
         return songs;
     }
 

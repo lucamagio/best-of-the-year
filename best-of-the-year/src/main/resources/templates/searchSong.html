@@ -1,18 +1,21 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <title>Home</title>
-</head>
+<div th:insert="headfragment.html :: head"></div>
 
 <body>
-    <h1>Titolo ricercato</h1>
-    <div th:if="${song != null}">
-        <p th:text="${song.titolo}"></p>
-    </div>
-    <div th:if="${song == null}">
-        <p>Canzone non trovata</p>
-    </div>
+    <div th:insert="headerfragment.html :: header"></div>
+
+    <main class="container text-center border border-dark">
+
+        <h1 th:text="${song.titolo}" class="mt-5"></h1>
+
+        <div class="text-center fs-4 mt-3">
+            <p th:text="'Il cantante della canzone è: ' + ${song.cantante}"></p>
+        </div>
+
+    </main>
+
 </body>
 
 </html>

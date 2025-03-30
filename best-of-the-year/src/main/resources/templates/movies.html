@@ -1,21 +1,26 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <title>Movies</title>
-</head>
+<div th:insert="headfragment.html :: head"></div>
 
 <body>
-    <h1>Lista Film</h1>
-    
-    <div>
-        <ul>
-            <li th:each="movie : ${listaMovies}" th:text="${movie.titolo}"></li>
-        </ul>
-    </div>
+    <div th:insert="headerfragment.html :: header"></div>
 
+    <main class="container border border-dark">
+        <div class="text-center mt-5">
+            <h1>Lista Film</h1>
+        </div>
+
+        <div class="text-center mt-5 d-flex justify-content-center">
+            <ul class="list-unstyled">
+                <li th:each="movie : ${listaMovies}" class="fs-5 border border-dark" style="width: 600px;">
+                    <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="${movie.titolo}" class="text-decoration-none"></a>
+                </li>
+            </ul>
+        </div>
+    </main>
 <!--
-    Risoluzione Prima parte  
+    Risoluzione Prima parte lista film come stringa
     <div>
         <p th:text="${listaFilm}"/>
     </div> -->

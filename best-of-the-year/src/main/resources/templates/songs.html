@@ -1,19 +1,25 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <title>Songs</title>
-</head>
+<div th:insert="headfragment.html :: head"></div>
 
 <body>
-    <h1>Lista Canzoni</h1>
-    
-    <div>
-        <ul>
-            <li th:each="song : ${listaSongs}" th:text="${song.titolo}"></li>
-        </ul>
-    </div>
+    <div th:insert="headerfragment.html :: header"></div>
 
+    <main class="container border border-dark">
+        <div class="text-center mt-5">
+            <h1>Lista Canzoni</h1>
+        </div>
+
+        <div class="text-center mt-5 d-flex justify-content-center">
+            <ul class="list-unstyled">
+                <li th:each="song : ${listaSongs}" class="fs-5 border border-dark" style="width: 600px;">
+                    <a th:href="@{/songs/{id}(id=${song.id})}" th:text="${song.titolo}" class="text-decoration-none"></a>
+                </li>
+            </ul>
+        </div>
+
+    </main>
 <!--     
     Risoluzione Prima parte
     <div>
